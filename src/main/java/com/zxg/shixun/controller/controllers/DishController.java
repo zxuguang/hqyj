@@ -63,18 +63,18 @@ public class DishController {
         return R.success(dishDtoPage);
     }
     @GetMapping("/{id}")
-    public R<DishDto> get(@PathVariable Long id){
-        DishDto byIdWithFlavor = dishService.getByIdWithFlavor(id);
-        return R.success(byIdWithFlavor);
+    public R<Temployee> get(@PathVariable Long id){
+        Temployee temployee = temployeeService.getById(id);
+        return R.success(temployee);
     }
 
     @PutMapping
     public R<String> update(@RequestBody TemployeeDto temployeeDto){
 //        log.info(dishDto.toString());
 
-        temployeeService.save(temployeeDto);
+        temployeeService.updateById(temployeeDto);
 
-        return R.success("新增菜品成功");
+        return R.success("新增成功");
     }
     @GetMapping("/list")
     public R<List<Dish>> list(Dish dish){
