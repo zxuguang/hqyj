@@ -7,6 +7,7 @@ import com.zxg.shixun.common.R;
 import com.zxg.shixun.dto.DishDto;
 import com.zxg.shixun.dto.TemployeeDto;
 import com.zxg.shixun.entity.Dish;
+import com.zxg.shixun.entity.Tdepartment;
 import com.zxg.shixun.entity.Temployee;
 import com.zxg.shixun.entity.Tposition;
 import com.zxg.shixun.service.*;
@@ -53,10 +54,14 @@ public class DishController {
         List<TemployeeDto> list = records.stream().map((item)->{
             TemployeeDto temployeeDto = new TemployeeDto();
             BeanUtils.copyProperties(item,temployeeDto);
-            int posId = item.getPosId();
+            Long posId = item.getPosId();
+            Long departmentId = item.getDepartmentId();
             Tposition tposition = tpositionService.getById(posId);
+            Tdepartment tdepartmentServiceById = tdepartmentService.getById(departmentId);
             String tpositionName = tposition.getName();
+            String tdepartmentName = tdepartmentServiceById.getName();
             temployeeDto.setPositionname(tpositionName);
+            temployeeDto.setDepartnema(tdepartmentName);
             return temployeeDto;
         }).collect(Collectors.toList());
         dishDtoPage.setRecords(list);

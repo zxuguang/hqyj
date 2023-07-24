@@ -21,12 +21,13 @@
 
 <body>
   <div class="login" id="login-app">
+
     <div class="login-box">
-      <img src="../../images/login/login-l.png" alt="">
+
       <div class="login-form">
         <el-form ref="loginForm" :model="loginForm" :rules="loginRules" >
           <div class="login-form-title">
-            <img src="../../images/login/logo.png" style="width:139px;height:90px;" alt="" />
+            <img src="../../images/login/logo.png" style="width:400px;height:250px;" alt="" />
           </div>
           <el-form-item prop="username">
             <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号" maxlength="20"
@@ -65,7 +66,7 @@
         return {
           loginForm:{
             username: 'zxg',
-            password: '123456'
+            password: ''
           },
           loading: false
         }

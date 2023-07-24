@@ -33,20 +33,41 @@ public class CategoryController {
 //        1.构造分页构造器
         Page pageInfo = new Page(page,pageSize);
 //        2.构造条件
-        LambdaQueryWrapper<Category> lambdaQueryWrapper = new LambdaQueryWrapper();
-        lambdaQueryWrapper.orderByDesc(Category::getSort);
-        categoryService.page(pageInfo,lambdaQueryWrapper);
+        LambdaQueryWrapper<Tdepartment> lambdaQueryWrapper = new LambdaQueryWrapper();
+        lambdaQueryWrapper.orderByDesc(Tdepartment::getId);
+        tdepartmentService.page(pageInfo,lambdaQueryWrapper);
+        return R.success(pageInfo);
+    }
+    @GetMapping("/page1")
+    public R<Page> page1(int page,int pageSize){
+//        1.构造分页构造器
+        Page pageInfo = new Page(page,pageSize);
+//        2.构造条件
+        LambdaQueryWrapper<Tposition> lambdaQueryWrapper = new LambdaQueryWrapper();
+        lambdaQueryWrapper.orderByDesc(Tposition::getId);
+        tpositionService.page(pageInfo,lambdaQueryWrapper);
         return R.success(pageInfo);
     }
     @DeleteMapping
     public R<String> delete(Long ids){
 //        categoryService.removeById(ids);
-        categoryService.remove(ids);
-        return R.success("分类信息删除成功");
+        tdepartmentService.removeById(ids);
+        return R.success("删除成功");
+    }
+    @DeleteMapping("/delete")
+    public R<String> delete1(Long ids){
+//        categoryService.removeById(ids);
+        tpositionService.removeById(ids);
+        return R.success("删除成功");
     }
     @PutMapping
-    public R<String> update(@RequestBody Category category){
-        categoryService.updateById(category);
+    public R<String> update(@RequestBody Tdepartment tdepartment){
+        tdepartmentService.updateById(tdepartment);
+        return R.success("修改成功");
+    }
+    @PutMapping("/edit")
+    public R<String> update1(@RequestBody Tposition tposition){
+        tpositionService.updateById(tposition);
         return R.success("修改成功");
     }
     @GetMapping("/list")

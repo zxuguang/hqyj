@@ -6,6 +6,13 @@ const getCategoryPage = (params) => {
     params
   })
 }
+const getCategoryPage1 = (params) => {
+  return $axios({
+    url: '/category/page1',
+    method: 'get',
+    params
+  })
+}
 
 // 编辑页面反查详情接口
 const queryCategoryById = (id) => {
@@ -23,11 +30,26 @@ const deleCategory = (ids) => {
     params: { ids }
   })
 }
+const deleCategory1 = (ids) => {
+  return $axios({
+    url: '/category/delete',
+    method: 'delete',
+    params: { ids }
+  })
+}
 
 // 修改接口
 const editCategory = (params) => {
   return $axios({
     url: '/category',
+    method: 'put',
+    data: { ...params }
+  })
+}
+//修改职位
+const editCategory1 = (params) => {
+  return $axios({
+    url: '/category/edit',
     method: 'put',
     data: { ...params }
   })
@@ -45,6 +67,23 @@ const addCategory = (params) => {
   const addWorkers = (params) =>{
     return $axios({
       url:'/workers',
+      method: 'post',
+      data: { ...params }
+    })
+  }
+
+}
+const addCategory1 = (params) => {
+  return $axios({
+    url:'/workers/add',
+    method: 'post',
+    data: { ...params }
+  })
+
+
+  const addWorkers = (params) =>{
+    return $axios({
+      url:'/workers/add',
       method: 'post',
       data: { ...params }
     })

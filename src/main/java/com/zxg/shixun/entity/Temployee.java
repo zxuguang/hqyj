@@ -14,8 +14,8 @@ public class Temployee implements Serializable {
     private String email;
     private String phone;
     private String address;
-    private int departmentId;
-    private int posId;
+    private Long departmentId;
+    private Long posId;
     private String image;
     private Boolean status;
 }

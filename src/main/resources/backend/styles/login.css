@@ -1,15 +1,22 @@
+.body{
+  position: relative;
+
+}
 .login {
+  background-image: url('../loginbg.jpg');
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #333;
+;
 }
 .login-box {
   width: 1000px;
   height: 474.38px;
   border-radius: 8px;
   display: flex;
+
 }
 
 .login-box img {
@@ -23,14 +30,19 @@
   color: #707070;
 }
 .login-form {
-  background: #ffffff;
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* 设置背景为半透明白色 */
   width: 40%;
+  height: 500px;
   border-radius: 0px 8px 8px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 550px;
 }
 .login-form .el-form {
+  background-color: transparent; /* 设置表单背景为透明 */
   width: 214px;
   height: 307px;
 }
@@ -54,20 +66,21 @@
   font-size: 14px;
   font-weight: 400;
   color: #333333;
-  height: 32px;
+  height: 40px;
   line-height: 32px;
+  border-radius: 20px;
 }
 .login-form .el-input__prefix {
   left: 0;
 }
 .login-form .el-input--prefix .el-input__inner {
-  padding-left: 26px;
+  padding-left: 40px;
 }
 .login-form .el-input__inner::placeholder {
   color: #aeb5c4;
 }
 .login-form .el-form-item--medium .el-form-item__content {
-  line-height: 32px;
+  line-height: 80%;
 }
 .login-form .el-input--medium .el-input__icon {
   line-height: 32px;
@@ -79,7 +92,7 @@
   font-weight: 500;
   font-size: 14px;
   border: 0;
-  background-color: #ffc200;
+  background-color: #0077aa;
 }
 .login-btn:hover,
 .login-btn:focus {

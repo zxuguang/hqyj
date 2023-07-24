@@ -22,7 +22,7 @@
 #                              reggie:
 #                                path: D:\
 server:
-  port: 8080
+  port: 8090
 
 spring:
   application:
@@ -51,4 +51,4 @@ mybatis-plus:
 
 #文件图片等保存路径，这样写方便修改
 reggie:
-  path: D\
+  path: D:\img\
